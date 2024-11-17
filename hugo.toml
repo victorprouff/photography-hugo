@@ -1,13 +1,7 @@
-# baseURL = 'https://example.org/'
-# languageCode = 'en-us'
-# title = 'My New Hugo Site'
-# theme = 'hugo-theme-gallery'
-
 baseURL = 'https://example.org/'
 languageCode = "fr-fr"
 title = 'Victor Prouff - Photographie'
-theme = 'hugo-theme-gallery'
-
+theme = 'gallery'
 copyright = "© Victor Prouff"
 defaultContentLanguage = "fr"
 disableKinds = ["taxonomy"]
@@ -24,11 +18,8 @@ timeout = "120s"
   [params.socialIcons]
     instagram = "https://www.instagram.com/victor.prouff.photographie/"
     github = "https://github.com/victorprouff/"
-    # youtube = "https://www.youtube.com/"
     email = "mailto:contact@victorprouff.fr"
-    #website = "https://example.com"
-    #mastodon = "https://example.com"
-    #pixelfed = "https://example.com"
+    website = "https://blog.victorprouff.fr"
   [params.gallery]
     #boxSpacing = 10
     #targetRowHeight = 288
@@ -56,8 +47,8 @@ timeout = "120s"
 [menu]
   [[menu.footer]]
     name = "GitHub"
-    url = "https://github.com/victorprouff/"
-    weight = 3
+    url = "https://github.com/victorprouff/photography-hugo"
+    weight = 5
 
 [services]
   [services.rss]

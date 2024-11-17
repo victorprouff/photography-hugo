@@ -1,8 +1,8 @@
 ---
 description: Les animaux que je rencontre sur mon chemin
-featured_image: IMG_8624.jpg
+featured_image: 20230927-DSCF2566-Avec accentuation-Bruit.jpg
 title: Animals
 categories: ["Animal", "nature"]
-weight: 1
+weight: 2
 menus: "main"
 ---

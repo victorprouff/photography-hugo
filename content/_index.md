@@ -7,8 +7,3 @@ menus:
     name: Home
     weight: -1
 ---
-
-
-Test On va voir si ça s'affiche
-# ça n'a pas l'air
-frezger

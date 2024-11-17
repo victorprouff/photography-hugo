@@ -1,3 +1,64 @@
+# baseURL = 'https://example.org/'
+# languageCode = 'en-us'
+# title = 'My New Hugo Site'
+# theme = 'hugo-theme-gallery'
+
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+languageCode = "fr-fr"
+title = 'Victor Prouff - Photographie'
+theme = 'hugo-theme-gallery'
+
+copyright = "© Victor Prouff"
+defaultContentLanguage = "fr"
+disableKinds = ["taxonomy"]
+enableRobotsTXT = true
+timeZone = "Europe/Paris"
+timeout = "120s"
+
+[params]
+  defaultTheme = "dark"
+  description = "Site photo de Victor Prouff. Venez découvrir mon univers"
+  [params.author]
+    email = "contact@victorprouff.fr"
+    name = "Victor Prouff"
+  [params.socialIcons]
+    instagram = "https://www.instagram.com/victor.prouff.photographie/"
+    github = "https://github.com/victorprouff/"
+    # youtube = "https://www.youtube.com/"
+    email = "mailto:contact@victorprouff.fr"
+    #website = "https://example.com"
+    #mastodon = "https://example.com"
+    #pixelfed = "https://example.com"
+  [params.gallery]
+    #boxSpacing = 10
+    #targetRowHeight = 288
+    #targetRowHeightTolerance = 0.25
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[imaging]
+  quality = 75
+  resampleFilter = "CatmullRom"
+  [imaging.exif]
+    disableDate = false
+    disableLatLong = true
+    includeFields = "ImageDescription|Orientation"
+
+# [module]
+#   [module.hugoVersion]
+#     min = "0.121.2"
+#   [[module.imports]]
+#     path = "github.com/nicokaiser/hugo-theme-gallery"
+
+[menu]
+  [[menu.footer]]
+    name = "GitHub"
+    url = "https://github.com/victorprouff/"
+    weight = 3
+
+[services]
+  [services.rss]
+    limit = 100

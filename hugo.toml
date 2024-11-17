@@ -7,7 +7,7 @@ defaultContentLanguage = "fr"
 disableKinds = ["taxonomy"]
 enableRobotsTXT = true
 timeZone = "Europe/Paris"
-timeout = "120s"
+timeout = "1200s"
 
 [params]
   defaultTheme = "dark"

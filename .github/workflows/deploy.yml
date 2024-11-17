@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    tags:
+      - "*"
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@main
+
+      - name: Update theme
+        # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
+        run: git clone https://github.com/victorprouff/hugo-theme-gallery themes/gallery
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+        
+      - name: Build
+        # remove --minify tag if you do not need it
+        # docs: https://gohugo.io/hugo-pipes/minification/
+        run: hugo --minify #; cp googlee3be102fb88798b0.html ./public/
+        
+      - name: ftp-delete-action
+        # You may pin to the exact commit or the version.
+        # uses: StephanThierry/ftp-delete-action@81ddbbb1a443ca858e1a12b86b454060fbec3415
+        uses: StephanThierry/ftp-delete-action@v2.1
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Directories to delete seperated by ";"
+          remoteDirectories: /img;/images
+    
+      - name: SFTP Deploy
+        #uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: ./public

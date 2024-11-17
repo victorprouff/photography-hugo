@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://photographie.victorprouff.fr/'
 languageCode = "fr-fr"
 title = 'Victor Prouff - Photographie'
 theme = 'gallery'

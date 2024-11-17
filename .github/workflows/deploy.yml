@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: https://photographie.victorprouff.fr/
     steps:
       - name: Git checkout
         uses: actions/checkout@main
@@ -18,7 +20,9 @@ jobs:
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
-        
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -27,8 +31,8 @@ jobs:
       - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
-        run: hugo --minify #; cp googlee3be102fb88798b0.html ./public/
-        
+        # run: hugo --minify #; cp googlee3be102fb88798b0.html ./public/
+        run: hugo --gc --minify --baseURL "${{ BASE_URL }}"
       - name: ftp-delete-action
         # You may pin to the exact commit or the version.
         # uses: StephanThierry/ftp-delete-action@81ddbbb1a443ca858e1a12b86b454060fbec3415

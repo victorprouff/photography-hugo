@@ -20,9 +20,9 @@ jobs:
         run: sudo snap install dart-sass-embedded
 
       - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.138.0'
           extended: true  # Si besoin de compiler sass
         
       - name: Build

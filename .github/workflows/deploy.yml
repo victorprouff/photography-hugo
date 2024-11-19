@@ -7,6 +7,8 @@ name: CI
 
 on:
   push:
+    tags:
+      "*"
     branches:
       - master  # Set a branch to deploy
 jobs:

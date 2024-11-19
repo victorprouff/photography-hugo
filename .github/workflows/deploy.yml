@@ -16,9 +16,6 @@ jobs:
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
         run: git clone https://github.com/victorprouff/hugo-theme-gallery themes/gallery
 
-      # - name: Install Dart Sass
-      #   run: sudo snap install dart-sass
-
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
 
@@ -26,7 +23,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          extended: true  # Assurez-vous que l'option extended est activée
+          extended: true  # Si besoin de compiler sass
         
       - name: Build
         # remove --minify tag if you do not need it

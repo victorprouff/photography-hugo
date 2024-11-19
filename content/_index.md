@@ -1,5 +1,5 @@
 ---
-description: Victor's website for her photos.
+description: Welcome to Victor Prouff's photo website.
 title: Gallery
 featured_image: IMG_8624.jpg
 menus:

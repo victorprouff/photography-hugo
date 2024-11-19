@@ -1,7 +1,7 @@
 ---
-description: Mes voyages en photos
+description: My landscape photos
 featured_image: IMG_8624.jpg
-title: Voyages
+title: Landscape
 categories: ["Landscape", "nature"]
 weight: 1
 menus: "main"

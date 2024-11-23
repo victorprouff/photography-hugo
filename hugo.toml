@@ -25,10 +25,29 @@ timeout = "1200s"
     #targetRowHeight = 288
     #targetRowHeightTolerance = 0.25
 
+# ----------------------OUTPUT------------------------ #
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "htaccess", "humanstxt"]
   page = ["HTML"]
   section = ["HTML"]
+
+[outputFormats]
+[outputFormats.htaccess]
+    baseName = ""
+    isPlainText = true
+    mediaType = "text/htaccess"
+
+[outputFormats.humanstxt]
+    baseName = "humans"
+    isPlainText = true
+    mediaType = "text/plain"
+
+# Permet de spécifier un type custom ici, htaccess  
+[mediaTypes]
+  [mediaTypes."text/htaccess"]
+    suffixes = ["htaccess"]
+
+# --------------------END-OUTPUT--------------------- #
 
 [imaging]
   quality = 75
